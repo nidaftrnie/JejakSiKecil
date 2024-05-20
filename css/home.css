@@ -1,0 +1,57 @@
+.navigation {
+  border-bottom-right-radius: 85px;
+  border-bottom-left-radius: 85px;
+}
+.nav-link,
+#home h1,
+#home p,
+#home h1 {
+  color: #ffffff;
+}
+
+#home button {
+  color: #00699a;
+}
+.nav-item .nav-link,
+#home button,
+#home p {
+  font-family: "Poppins";
+  font-size: 16px;
+}
+h2,
+p {
+  font-family: "Poppins";
+}
+#logo,
+#home h1 {
+  font-family: "Fjalla One", sans-serif;
+}
+.img {
+  color: white;
+}
+button {
+  outline: none;
+  border: none;
+}
+#home h1 {
+  margin-top: 180px;
+  font-size: 96px;
+}
+#home p {
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+#home button {
+  margin-bottom: 180px;
+}
+#home .bg-image {
+  background-image: url("../img/kids.svg");
+  background-size: cover;
+  background-position: center;
+}
+#about p{
+  text-align: justify;
+}
+#nav_footer a{
+  color: #000000;
+}
