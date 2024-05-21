@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>JejakSiKecil</title>
-    
+
     <!-- Boostrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
@@ -16,14 +16,17 @@
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Poppins" rel="stylesheet" />
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
     <!-- Section Home -->
-    <div class="navigation pe-1 pt-2 mb-4" style="background-color: #458fb1">
+    <div class="navigation pe-1 pt-2 mb-4" style="background-color: #458fb1" data-aos="fade-down">
         <section id="home">
-            <div class="container">
-                <div class="bg-image">
+            <div class="container mt-5 pt-5">
+                <div class="bg-image image-fluid">
                     <div class="row text-center my-auto pt-4 d-flex justify-content-center align-items-center">
                         <div>
                             <h1>JejakSiKecil</h1>
@@ -43,10 +46,10 @@
     <section id="about" class="mt-5 pt-5 pb-4">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 my-auto d-flex justify-content-end pe-5">
+                <div class="col-md-6 my-auto d-flex justify-content-end pe-5" data-aos="fade-right">
                     <img src="./images/kid-about.svg" class="img-fluid" />
                 </div>
-                <div class="col-md-6 my-auto pe-5">
+                <div class="col-md-6 my-auto pe-5" data-aos="fade-left">
                     <h2 class="fw-bold">Tentang</h2>
                     <p>
                         JejakSiKecil merupakan website yang menyediakan informasi mengenai
@@ -56,7 +59,6 @@
                     </p>
                 </div>
             </div>
-        </div>
     </section>
 
     <!-- Section Article -->
@@ -65,6 +67,7 @@
             <div class="row titleberita">
                 <div class="col-12">
                     <h1>Artikel terbaru</h1>
+                    <hr>
                 </div>
             </div>
 
@@ -84,16 +87,15 @@
                         <img src="<?= $row['foto'] ?>" class="float-left">
                         <h3><?= $row['judul'] ?></h3>
                         <p><?= $row['artikel'] ?></p>
-                        <small class="text-warning">
+                        <small class="text-primary">
                             <?php
                             $harijam = $row['date'];
                             $date = strtotime($harijam);
                             echo date('M - H:I', $date);
                             ?>
                         </small>
-                        <a href="index.php?p=detail_berita&id=<?= $row['id'] ?>"><img src="img/next.png" alt="workingspace"
+                        <a href="index.php?p=detail_berita&id=<?= $row['id'] ?>"><img src="icons/next.svg" alt="workingspace"
                                 class="float-right" style="width:30px; height: 30px;"></a>
-
                     </div>
                     <?php
                     $i++;
@@ -108,11 +110,11 @@
     <section id="faq" class="mt-5 pt-5 pb-4">
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6" data-aos="zoom-in-right">
                     <h2 class="fw-bold">Frequently Ask Question</h2>
                 </div>
                 <div class="col-md-6">
-                    <div class="accordion" id="accordionExample">
+                    <div class="accordion" id="accordionExample" data-aos="zoom-in-left">
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingOne">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse"
@@ -177,6 +179,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+
+    <!-- JS AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({
+            duration: 1200,
+        })</script>
 </body>
 
 </html>

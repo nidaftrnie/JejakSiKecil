@@ -31,28 +31,23 @@
         <div class="col-md-6">
           <p>Contact</p>
           <div class="row">
-            <div class="col-md-2">
-              <img class="img-fluid" src="public/icons/icon_facebook.svg" />
+            <div class="col-md-4">
+              <img class="img-fluid" src="./icons/icon_mail.svg" />
             </div>
-            <div class="col-md-2">
-              <img class="img-fluid" src="public/icons/icon_instagram.svg" />
+            <div class="col-md-4">
+              <img class="img-fluid" src="./icons/icon_instagram.svg" />
             </div>
-            <div class="col-md-2">
-              <img class="img-fluid" src="public/icons/icon_twitter.svg" />
-            </div>
-            <div class="col-md-2">
-              <img class="img-fluid" src="public/icons/icon_mail.svg" />
-            </div>
-            <div class="col-md-2">
-              <img class="img-fluid" src="public/icons/icon_twitch.svg" />
+            <div class="col-md-4">
+              <img class="img-fluid" src="./icons/icon_linkedin.svg" />
             </div>
           </div>
         </div>
         <div class="col-md-2">
-          <p>Copyright Binar 2022</p>
-          <img class="nav-link" src="public/icons/logobinar.png" id="logobinar" />
+          <p>Copyright Nida Fitrianie &#169 2024</p>
+          <img class="nav-link" src="" id="logobinar" />
         </div>
       </div>
+    </div>
     </div>
   </section>
 

@@ -17,12 +17,15 @@
 
     <!-- Style -->
     <link rel="stylesheet" href="../css/login.css">
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
     <main class="d-flex align-items-center min-vh-100 py-3 py-md-0">
         <div class="container">
-            <div class="card login-card">
+            <div class="card login-card" data-aos="zoom-in">
                 <div class="row no-gutters">
                     <div class="col-md-6">
                         <img src="../images/kids-login.jpg" alt="login" class="login-card-img">
@@ -59,6 +62,12 @@
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
                 integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
                 crossorigin="anonymous"></script>
+
+            <!-- JS AOS -->
+            <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+            <script>AOS.init({
+                    duration: 1200,
+                })</script>
 </body>
 
 </html>

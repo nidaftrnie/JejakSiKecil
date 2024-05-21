@@ -71,6 +71,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <!-- Style -->
     <link rel="stylesheet" href="../css/login.css">
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 </head>
 
@@ -78,7 +81,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <form method="post" action="" enctype="multipart/form-data"
         class="d-flex align-items-center min-vh-100 py-3 py-md-0">
         <div class="container">
-            <div class="card login-card">
+            <div class="card login-card" data-aos="zoom-in">
                 <div class="row no-gutters">
                     <div class="col-md-6">
                         <img src="../images/kids-login.jpg" alt="login" class="login-card-img">
@@ -122,6 +125,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 crossorigin="anonymous"></script>
         </div>
     </form>
+
+    <!-- JS AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({
+            duration: 1200,
+        })</script>
 </body>
 
 </html>
