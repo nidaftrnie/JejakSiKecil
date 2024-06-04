@@ -9,7 +9,7 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
 
   <!--Style CSS-->
-  <link rel="stylesheet" href="../css/home.css" />
+  <link rel="stylesheet" href="../css/style.css" />
 
   <!-- Font -->
   <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
@@ -39,7 +39,7 @@
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-center flex-grow-1">
             <li class="nav-item">
-              <a class="nav-link" href="#home">Beranda</a>
+              <a class="nav-link" href="./index.php">Beranda</a>
             </li>
             <li class="nav-item">
               <a class="nav-link mx-lg-2" href="#">Artikel</a>
@@ -56,30 +56,30 @@
           if (isset($_SESSION['login'])):
             ?>
 
-            <!-- Pages if login as user -->
-            <?php
-            if (($_SESSION['login']) && ($_SESSION['role'] == 'user')):
-              ?>
-              <a class="nav-item nav-link pe-2 px-auto my-auto" href="index.php?p=edit">Account</a>
-              <a class="nav-item btn tombol rounded-pill fw-semibold" href="process/logout.php"
-                style="background-color: #00699a; font-size: 16px; color: #ffff;">Logout</a>
-            <?php endif; ?>
+              <!-- Pages if login as user -->
+              <?php
+              if (($_SESSION['login']) && ($_SESSION['role'] == 'user')):
+                ?>
+                  <a class="nav-item nav-link pe-2 px-auto my-auto" href="index.php?p=edit">Account</a>
+                  <a class="nav-item btn tombol rounded-pill fw-semibold" href="process/logout.php"
+                    style="background-color: #00699a; font-size: 16px; color: #ffff;">Logout</a>
+              <?php endif; ?>
 
-            <!-- Pages if login as admin -->
-            <?php if (($_SESSION['login']) && ($_SESSION['role'] == 'admin')): ?>
-              <a class="nav-item nav-link" href="index.php?p=panel_admin">Panel Admin</a>
-              <a class="nav-item nav-link" href="index.php?p=edit">Account</a>
-              <a class="nav-item btn tombol rounded-pill fw-semibold" href="process/logout.php"
-                style="background-color: #00699a; font-size: 16px; color: #ffff;">Logout</a>
-            <?php endif; ?>
+              <!-- Pages if login as admin -->
+              <?php if (($_SESSION['login']) && ($_SESSION['role'] == 'admin')): ?>
+                  <a class="nav-item nav-link" href="index.php?p=panel_admin">Panel Admin</a>
+                  <a class="nav-item nav-link" href="index.php?p=edit">Account</a>
+                  <a class="nav-item btn tombol rounded-pill fw-semibold" href="process/logout.php"
+                    style="background-color: #00699a; font-size: 16px; color: #ffff;">Logout</a>
+              <?php endif; ?>
 
-            <!-- Pages if not login -->
+              <!-- Pages if not login -->
           <?php else: ?>
-            <a class="btn rounded-pill fw-semibold" href="pages/login.php"
-              style="background-color: #00699a; font-size: 16px; color: #ffff;">
-              <img src="./icons/login.svg" id="icon-login" />
-              Masuk
-            </a>
+              <a class="btn rounded-pill fw-semibold" href="pages/login.php"
+                style="background-color: #00699a; font-size: 16px; color: #ffff;">
+                <img src="./icons/login.svg" id="icon-login" />
+                Masuk
+              </a>
           <?php endif; ?>
         </div>
       </div>

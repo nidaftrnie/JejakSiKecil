@@ -84,7 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="card login-card" data-aos="zoom-in">
                 <div class="row no-gutters">
                     <div class="col-md-6">
-                        <img src="../images/kids-login.jpg" alt="login" class="login-card-img">
+                        <img src="../img/kids-login.jpg" alt="login" class="login-card-img">
                     </div>
                     <div class="col-md-6">
                         <div class="card-body">

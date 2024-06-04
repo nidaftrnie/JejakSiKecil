@@ -11,7 +11,7 @@
 		integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
 
 	<!--Style CSS-->
-	<link rel="stylesheet" href="../css/home.css" />
+	<link rel="stylesheet" href="dashboard.css" />
 
 	<!-- Font -->
 	<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
@@ -23,7 +23,7 @@
 <body>
 	<div class="container">
 		<div class="col-lg-12 mt-5 pt-5">
-			<div class="row edit_profile">
+			<div class="row edit_profile" >
 				<div class="col-lg-4">
 					<img src="<?= $_SESSION['foto'] ?>" class="edit_profile_image">
 				</div>
@@ -168,7 +168,7 @@
 							<span aria-hidden="true">&times;</span>
 						</button>
 					</div>
-					<form action="process/user/ubahUserPass_proses.php" method="post">
+					<form action="../process/user/ubahUserPass_proses" method="post">
 						<div class="modal-body">
 
 							<div class="form-group">

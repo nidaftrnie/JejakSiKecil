@@ -11,7 +11,7 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
 
     <!--Style CSS-->
-    <link rel="stylesheet" href="../css/home.css" />
+    <link rel="stylesheet" href="../css/style.css" />
 
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
@@ -33,7 +33,7 @@
                             <p>Membimbing Langkah Kecil Menuju Masa Depan Besar</p>
                             <button type="button" class="btn rounded-pill"
                                 style="background-color: #bef7ff; width: 20%; height: 6%">
-                                Tulis Ceritamu!
+                                Lihat Cerita SiKecil
                             </button>
                         </div>
                     </div>
@@ -47,7 +47,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 my-auto d-flex justify-content-end pe-5" data-aos="fade-right">
-                    <img src="./images/kid-about.svg" class="img-fluid" />
+                    <img src="./img/kid-about.svg" class="img-fluid" />
                 </div>
                 <div class="col-md-6 my-auto pe-5" data-aos="fade-left">
                     <h2 class="fw-bold">Tentang</h2>
