@@ -7,7 +7,7 @@ class Komentar
 	function __construct()
 	{
 		try {
-			$this->pdo = new PDO('mysql:host=localhost;dbname=konsuldoc', 'root', '');
+			$this->pdo = new PDO('mysql:host=localhost;dbname=jejaksikecil', 'root', '');
 		} catch (PDOException $e) {
 			echo $e;
 		}
@@ -40,36 +40,6 @@ class Komentar
 		return $stmt;
 	}
 
-	public function hapusArtikel($id)
-	{
-		$sql = "DELETE FROM tartikel WHERE id=?";
-		$stmt = $this->pdo->prepare($sql);
-		$stmt->execute([$id]);
-	}
-
-	public function updateArtikel($id, $judul, $artikel)
-	{
-		$sql = "UPDATE tartikel SET judul=?,
-                    artikel=?
-										WHERE id_user=?";
-		$stmt = $this->pdo->prepare($sql);
-		$stmt->execute([
-			$judul,
-			$nama
-		]);
-		return 1;
-	}
-
-	// public function ambilProdi(){
-	// 	$sql = "SELECT * FROM prodi";
-	// 	$stmt = $this->pdo->query($sql);
-	// 	return $stmt;
-	// }
-
 }
-
-
-
-
 
 ?>

@@ -35,12 +35,19 @@ class User
 		}
 	}
 
-	public function tambahUser($nama, $email, $pass, $foto)
-{
-    $sql = "INSERT INTO tuser (nama_user, email_user, pass_user, role, foto_user) VALUES (?, ?, ?, 'user', ?)";
-    $stmt = $this->pdo->prepare($sql);
-    $stmt->execute([$nama, $email, $pass, $foto]);
-}
+	public function tambahUser($nama, $email, $telp, $pass, $foto)
+	{
+		$sql = "INSERT INTO tuser (nama_user,email_user,telp_user,pass_user,role,foto_user) VALUES(?,?,?,?,?,?)";
+		$stmt = $this->pdo->prepare($sql);
+		$stmt->execute([
+			$nama,
+			$email,
+			$telp,
+			$pass,
+			'user',
+			$foto
+		]);
+	}
 
 	public function tampilUser()
 	{
@@ -73,15 +80,17 @@ class User
 		$stmt->execute([$id]);
 	}
 
-	public function updateUser($id, $nama, $pass, $foto)
+	public function updateUser($id, $nama, $telp, $pass, $foto)
 	{
 		$sql = "UPDATE tuser SET nama_user=?,
-										pass_user=?,
-										foto_user=?
-										WHERE id_user=?";
+						telp_user=?,
+											pass_user=?,
+											foto_user=?
+											WHERE id_user=?";
 		$stmt = $this->pdo->prepare($sql);
 		$stmt->execute([
 			$nama,
+			$telp,
 			$pass,
 			$foto,
 			$id
@@ -89,16 +98,18 @@ class User
 		return 1;
 	}
 
-	public function updateUserBio($id, $nama, $tgl_lahir, $jk)
+	public function updateUserBio($id, $nama, $tgl_lahir, $telp, $jk)
 	{
 		$sql = "UPDATE tuser SET nama_user=?,
-                    tgl_lahir=?,
-										jk=?
-										WHERE id_user=?";
+						tgl_lahir=?,
+											telp_user=?,
+											jk=?
+											WHERE id_user=?";
 		$stmt = $this->pdo->prepare($sql);
 		$stmt->execute([
 			$nama,
 			$tgl_lahir,
+			$telp,
 			$jk,
 			$id
 		]);
@@ -108,7 +119,7 @@ class User
 	public function updateUserPass($id, $pass)
 	{
 		$sql = "UPDATE tuser SET pass_user=?
-                    WHERE id_user=?";
+						WHERE id_user=?";
 		$stmt = $this->pdo->prepare($sql);
 		$stmt->execute([
 			$pass,
@@ -117,16 +128,6 @@ class User
 		return 1;
 	}
 
-	// public function ambilProdi(){
-	// 	$sql = "SELECT * FROM prodi";
-	// 	$stmt = $this->pdo->query($sql);
-	// 	return $stmt;
-	// }
-
 }
-
-
-
-
 
 ?>

@@ -8,12 +8,12 @@ include 'templates/header.php';
 ?>
 
 <?php
-if(!isset($_GET['p'])){
+if (!isset($_GET['p'])) {
   $page = "main";
-}else{
+} else {
   $page = $_GET['p'];
 }
-include 'pages/'.$page .'.php';
+include 'pages/' . $page . '.php';
 ?>
 
 <?php

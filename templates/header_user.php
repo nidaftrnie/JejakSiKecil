@@ -56,35 +56,46 @@
           if (isset($_SESSION['login'])):
             ?>
 
-              <!-- Pages if login as user -->
-              <?php
-              if (($_SESSION['login']) && ($_SESSION['role'] == 'user')):
-                ?>
-                  <a class="nav-item nav-link pe-2 px-auto my-auto" href="index.php?p=edit">Account</a>
-                  <a class="nav-item btn tombol rounded-pill fw-semibold" href="process/logout.php"
-                    style="background-color: #00699a; font-size: 16px; color: #ffff;">Logout</a>
-              <?php endif; ?>
+            <!-- Pages if login as user -->
+            <?php
+            if (($_SESSION['login']) && ($_SESSION['role'] == 'user')):
+              ?>
+              <a class="nav-item nav-link pe-2 px-auto my-auto" href="index.php?p=edit">Account</a>
+              <a class="nav-item btn tombol rounded-pill fw-semibold" href="process/logout.php"
+                style="background-color: #00699a; font-size: 16px; color: #ffff;">Logout</a>
+            <?php endif; ?>
 
-              <!-- Pages if login as admin -->
-              <?php if (($_SESSION['login']) && ($_SESSION['role'] == 'admin')): ?>
-                  <a class="nav-item nav-link" href="index.php?p=panel_admin">Panel Admin</a>
-                  <a class="nav-item nav-link" href="index.php?p=edit">Account</a>
-                  <a class="nav-item btn tombol rounded-pill fw-semibold" href="process/logout.php"
-                    style="background-color: #00699a; font-size: 16px; color: #ffff;">Logout</a>
-              <?php endif; ?>
+            <!-- Pages if login as admin -->
+            <?php if (($_SESSION['login']) && ($_SESSION['role'] == 'admin')): ?>
+              <a class="nav-item nav-link" href="index.php?p=panel_admin">Panel Admin</a>
+              <a class="nav-item nav-link" href="index.php?p=edit">Account</a>
+              <a class="nav-item btn tombol rounded-pill fw-semibold" href="process/logout.php"
+                style="background-color: #00699a; font-size: 16px; color: #ffff;">Logout</a>
+            <?php endif; ?>
 
-              <!-- Pages if not login -->
+            <!-- Pages if not login -->
           <?php else: ?>
-              <a class="btn rounded-pill fw-semibold" href="pages/login.php"
-                style="background-color: #00699a; font-size: 16px; color: #ffff;">
-                <img src="./icons/login.svg" id="icon-login" />
-                Masuk
-              </a>
+            <a class="btn rounded-pill fw-semibold" href="pages/login.php"
+              style="background-color: #00699a; font-size: 16px; color: #ffff;">
+              <img src="./icons/login.svg" id="icon-login" />
+              Masuk
+            </a>
           <?php endif; ?>
         </div>
       </div>
     </div>
   </nav>
+
+  <!-- JS Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>

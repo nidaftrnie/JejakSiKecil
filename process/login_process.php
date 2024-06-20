@@ -1,4 +1,5 @@
 <?php
+
 include '../database/User.php';
 $usr = new User;
 
@@ -22,7 +23,6 @@ if ($cekpass) {
     $_SESSION['tgl_lahir'] = $data['tgl_lahir'];
     $_SESSION['jk'] = $data['jk'];
 
-
     echo "<script>
                 alert('Login Berhasil !');
                 window.location = '../index.php';
@@ -34,6 +34,5 @@ if ($cekpass) {
                 window.location = '../index.php';
             </script>";
 }
-
 
 ?>

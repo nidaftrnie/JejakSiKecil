@@ -9,7 +9,8 @@ $data = $user->tampilArtikelById($id);
 
 <br />
 <!-- tempat ketik berita -->
-<form action="process/artikel/editArtikel_proses.php" method="post" enctype="multipart/form-data">
+<form action="process/artikel/editArtikel_proses.php" method="post" enctype="multipart/form-data"
+    style="margin-left: 40%">
     <div class="form-group">
         <label for="judulartikel">Judul Artikel :</label>
         <input type="text" name="judul" value="<?= $data['judul'] ?>" placeholder="Judul Artikel" class="form-control"
@@ -17,8 +18,7 @@ $data = $user->tampilArtikelById($id);
     </div>
     <div class="form-group">
         <label for="isiartikel">Isi Artikel :</label>
-        <input type="text" class="form-control" name="artikel" value="<?= $data['artikel'] ?>" id="isiartikel"
-            rows="3">
+        <input type="text" class="form-control" name="artikel" value="<?= $data['artikel'] ?>" id="isiartikel" rows="3">
     </div>
     <img src="<?= $data['foto']; ?>"><br /><br />
     <div class="form-group">

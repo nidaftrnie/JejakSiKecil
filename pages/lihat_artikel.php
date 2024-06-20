@@ -12,9 +12,9 @@ include 'database/Artikel.php';
   $i = 1;
   foreach ($data as $row):
     ?>
-    
+
     <div class="col-lg-6 maelee" style="margin-left: 35%">
-      <img src="<?= $row['foto'] ?>" alt="workingspace" class="float-left">
+      <img src="<?= $row['foto'] ?>" class="float-left">
       <h3><?= $row['judul'] ?></h3>
       <p><?= $row['artikel'] ?></small></p>
       <a href="index.php?p=edit_artikel&id=<?= $row['id']; ?>"><button class="btn btn-outline-primary">Ubah</button></a>

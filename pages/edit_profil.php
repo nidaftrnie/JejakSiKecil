@@ -34,9 +34,9 @@
                     <img src="img/birthday-cake.svg" class="icon_kue">
                     <p class="p_class">
                         <?php if ($_SESSION['tgl_lahir'] == ""): ?>
-                                <?php echo "Belum Diisi" ?>
+                            <?php echo "Belum Diisi" ?>
                         <?php else: ?>
-                                <?= $_SESSION['tgl_lahir'] ?>
+                            <?= $_SESSION['tgl_lahir'] ?>
                         <?php endif; ?>
 
                     </p><br />
@@ -44,9 +44,9 @@
                     <img src="img/cd-icon-phone.svg" class="icon_kue">
                     <p class="p_class">
                         <?php if ($_SESSION['telp'] == ""): ?>
-                                <?php echo "Belum Diisi" ?>
+                            <?php echo "Belum Diisi" ?>
                         <?php else: ?>
-                                <?= $_SESSION['telp'] ?>
+                            <?= $_SESSION['telp'] ?>
                         <?php endif; ?>
 
                     </p><br />
@@ -54,9 +54,9 @@
                     <img src="img/male-and-female-symbols.svg" class="icon_kue">
                     <p class="p_class">
                         <?php if ($_SESSION['jk'] == ""): ?>
-                                <?php echo "Belum Diisi" ?>
+                            <?php echo "Belum Diisi" ?>
                         <?php else: ?>
-                                <?= $_SESSION['jk'] ?>
+                            <?= $_SESSION['jk'] ?>
                         <?php endif; ?>
                     </p><br />
 

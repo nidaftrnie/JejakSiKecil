@@ -23,7 +23,7 @@
 <body>
 	<div class="container">
 		<div class="col-lg-12 mt-5 pt-5">
-			<div class="row edit_profile" >
+			<div class="row edit_profile">
 				<div class="col-lg-4">
 					<img src="<?= $_SESSION['foto'] ?>" class="edit_profile_image">
 				</div>

@@ -1,58 +1,3 @@
-<?php
-include '../database/User.php'; // Memanggil file User.php yang berisi class User
-$user = new User; // Membuat instance dari class User
-
-date_default_timezone_set('Asia/Jakarta');
-
-// Cek apakah request adalah POST
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Mengambil data dari formulir registrasi
-    $nama = $_POST['nama'];
-    $email = $_POST['email'];
-    $password = $_POST['password']; // Disimpan sebagai plaintext (belum di-hash)
-    $foto_sumber = $_FILES['foto']['tmp_name'];
-    $foto_nama = $_FILES['foto']['name'];
-    $tujuan_foto = "../uploads/" . $foto_nama; // Lokasi untuk menyimpan foto
-    $alamat_foto = "uploads/" . $foto_nama; // Alamat yang disimpan di database
-
-    // Validasi foto
-    $filesize = $_FILES['foto']['size'];
-    $sizemax = 2 * 1024 * 1024; // 2 MB
-    if ($filesize > $sizemax) {
-        echo "<script>alert('Ukuran file terlalu besar, maksimum 2MB!'); window.location = 'register.php';</script>";
-        exit();
-    }
-
-    // Mengambil ekstensi file yang diunggah
-    $ext = strtolower(pathinfo($foto_nama, PATHINFO_EXTENSION));
-
-    // Daftar ekstensi yang diizinkan
-    $extboleh = array("jpg", "png", "gif", "jpeg");
-
-    // Memeriksa apakah ekstensi file termasuk dalam daftar yang diizinkan
-    if (!in_array($ext, $extboleh)) {
-        echo "<script>alert('Ekstensi file tidak diizinkan!'); window.location = 'register.php';</script>";
-        exit(); // Menghentikan eksekusi script jika ekstensi tidak diizinkan
-    }
-
-    // Hash password sebelum disimpan
-    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-
-    // Cek apakah email sudah terdaftar
-    if ($user->checkEmail($email)) {
-        echo "<script>alert('Email sudah terdaftar!'); window.location = 'register.php';</script>";
-    } else {
-        // Menambahkan data registrasi ke dalam database
-        $user->tambahUser($nama, $email, $hashed_password, $alamat_foto);
-
-        // Menyimpan foto ke dalam direktori yang sesuai
-        move_uploaded_file($foto_sumber, $tujuan_foto);
-
-        echo "<script>alert('Registrasi berhasil!'); window.location = '../index.php';</script>";
-    }
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -78,8 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
-    <form method="post" action="" enctype="multipart/form-data"
-        class="d-flex align-items-center min-vh-100 py-3 py-md-0">
+    <main class="d-flex align-items-center min-vh-100 py-3 py-md-0">
         <div class="container">
             <div class="card login-card" data-aos="zoom-in">
                 <div class="row no-gutters">
@@ -92,7 +36,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <p alt="logo" class="logo">JejakSiKecil</p>
                             </div>
                             <p class="login-card-description">Register your account</p>
-                            <form action="#!">
+                            <form method="post" action="../process/user/tambahUser_proses.php"
+                                enctype="multipart/form-data">
                                 <div class="form-group">
                                     <label for="nama" class="sr-only">Nama</label>
                                     <input type="text" name="nama" id="nama" class="form-control" placeholder="Nama">
@@ -111,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     <label for="formFile" class="form-label">Select Photo </label>
                                     <input class="form-control" type="file" name="foto" id="formFile">
                                 </div>
-                                <input name="login" id="login" class="btn btn-block login-btn mb-4" type="submit"
+                                <input name="register" id="register" class="btn btn-block login-btn mb-4" type="submit"
                                     value="Register">
                             </form>
                             <p class="login-card-footer-text">Already have an account? <a href="login.php"
@@ -124,7 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
                 crossorigin="anonymous"></script>
         </div>
-    </form>
+    </main>
 
     <!-- JS AOS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

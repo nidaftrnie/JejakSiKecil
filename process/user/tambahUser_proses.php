@@ -1,90 +1,72 @@
 <?php
-    include '../../database/User.php';
-    $usr = new User;
 
-    $nama = $_POST['nama'];
-    $email = $_POST['email'];
-    $telp = $_POST['telepon'];
-    $pass = $_POST['password'];
+include '../../database/User.php';
+$usr = new User;
 
+$nama = $_POST['nama'];
+$email = $_POST['email'];
+$telp = $_POST['telepon'];
+$pass = $_POST['password'];
 
+$passenkripsi = password_hash($pass, PASSWORD_BCRYPT);
 
-    $passenkripsi = password_hash($pass, PASSWORD_BCRYPT);
+//gambar
+$sumber = $_FILES['foto']['tmp_name'];
+$namafile = $_FILES['foto']['name'];
 
+// var_dump($namafile);
+$ekstensiGambar = explode('.', $namafile);
+$ekstensiGambar = strtolower(end($ekstensiGambar));
 
+$namaFileBaru = uniqid();
+$namaFileBaru .= '.';
+$namaFileBaru .= $ekstensiGambar;
 
-    //gambar
-    $sumber = $_FILES['foto']['tmp_name'];
-    $namafile = $_FILES['foto']['name'];
+$tujuan = "../../uploads/" . $namaFileBaru;  //untuk di upload
+$alamat = "uploads/" . $namaFileBaru;  //untuk di simpan
+$alamatkosong = "";
 
-    // var_dump($namafile);
-
-    $ekstensiGambar = explode('.',$namafile);
-    $ekstensiGambar = strtolower(end($ekstensiGambar));
-
-    $namaFileBaru = uniqid();
-    $namaFileBaru .= '.';
-    $namaFileBaru .= $ekstensiGambar;
-
-
-    $tujuan = "../../photos/".$namaFileBaru;  //untuk di upload
-    $alamat ="photos/".$namaFileBaru;  //untuk di simpan
-    $alamatkosong = "";
-    //akhir gambar
-    $filesize = $_FILES['foto']['size']; //ambil size gambar
-    $sizemax = 2*1024*1024;   //2mb
+$filesize = $_FILES['foto']['size']; //ambil size gambar
+$sizemax = 2 * 1024 * 1024;   //2mb
 
 
-    if ($usr->checkEmail($email)== 1) {         //check email
-      echo "<script>
+if ($usr->checkEmail($email) == 1) {         //check email
+  echo "<script>
                 alert('Email Sudah Tersedia !');
                 window.location = '../../index.php';
             </script>";
-    }else{
+} else {
 
-      if ($filesize <= $sizemax) {
-        $pecahfile = explode(".",$namafile);
-        $ext = end($pecahfile);
-        $ext = strtolower($ext);
-        $extboleh = array("jpg","png","gif","jpeg");
+  if ($filesize <= $sizemax) {
+    $pecahfile = explode(".", $namafile);
+    $ext = end($pecahfile);
+    $ext = strtolower($ext);
+    $extboleh = array("jpg", "png", "gif", "jpeg");
 
-        if (in_array($ext, $extboleh)) {
+    if (in_array($ext, $extboleh)) {
 
-          $usr->tambahUser($nama,$email,$telp,$passenkripsi,$alamat);
+      $usr->tambahUser($nama, $email, $telp, $passenkripsi, $alamat);
 
-          move_uploaded_file($sumber,$tujuan);
+      move_uploaded_file($sumber, $tujuan);
 
-          echo "<script>
-        						alert('Data berhasil tambah !');
-        						window.location = '../../index.php';
+      echo "<script>
+        						alert('Berhasil Registrasi!');
+        						window.location = '../login.php';
         				</script>";
-        }else {
-          echo "<script>
-        						alert('File bukan berupa foto !');
-        						window.location = '../../index.php';
+    } else {
+      echo "<script>
+        						alert('Ekstensi file tidak diizinkan!');
+        						window.location = '../../register.php';
         				</script>";
-        }
-
-      }else{
-        echo "<script>
-      						alert('File terlalu Besar !');
-      						window.location = '../../index.php';
-      				</script>";
-      }
-
-
-
-
-
     }
 
+  } else {
+    echo "<script>
+      						alert('File terlalu Besar!');
+      						window.location = '../../index.php';
+      				</script>";
+  }
 
+}
 
-
-
-
-
-
-
-
- ?>
+?>

@@ -5,8 +5,10 @@
   </script>
 <?php endif; ?>
 <br />
+
 <!-- tempat ketik berita -->
-<form action="process/artikel/tambahArtikel_proses.php" method="post" enctype="multipart/form-data" style="margin-left: 35%">
+<form action="process/artikel/tambahArtikel_proses.php" method="post" enctype="multipart/form-data"
+  style="margin-left: 35%">
   <div class="form-group">
     <label for="judulartikel">Judul Artikel :</label>
     <input type="text" name="judul" placeholder="Judul Artikel" class="form-control" id="judulartikel">
@@ -26,12 +28,7 @@
 
 <?php
 include 'database/Artikel.php';
-
 ?>
-
-<!-- Berita -->
-
-<!-- Akhir berita -->
 
 <!-- awal pagination -->
 <div class="row justify-content-md-center mt-5">
