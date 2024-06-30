@@ -1,8 +1,6 @@
 <?php
 include 'database/Artikel.php';
-
 ?>
-
 
 <div class="row berita">
   <?php
@@ -13,7 +11,7 @@ include 'database/Artikel.php';
   foreach ($data as $row):
     ?>
 
-    <div class="col-lg-6 maelee" style="margin-left: 35%">
+    <div class="col-lg-6 maelee">
       <img src="<?= $row['foto'] ?>" class="float-left">
       <h3><?= $row['judul'] ?></h3>
       <p><?= $row['artikel'] ?></small></p>

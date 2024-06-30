@@ -14,14 +14,14 @@ class Komentar
 	}
 
 
-	public function tambahKomentar($nama, $komentar, $post)
+	public function tambahKomentar($nama, $komentar, $artikel_id)
 	{
-		$sql = "INSERT INTO tkomentar (nama,komentar,post) VALUES(?,?,?)";
+		$sql = "INSERT INTO tkomentar (nama,komentar,artikel_id) VALUES(?,?,?)";
 		$stmt = $this->pdo->prepare($sql);
 		$stmt->execute([
 			$nama,
 			$komentar,
-			$post
+			$artikel_id
 		]);
 	}
 
@@ -32,11 +32,11 @@ class Komentar
 		return $stmt;
 	}
 
-	public function tampilKomentarByPost($post)
+	public function tampilKomentarByPost($artikel_id)
 	{
-		$sql = "SELECT * FROM tkomentar,tuser WHERE post = ? AND tkomentar.nama= tuser.nama_user ORDER BY date DESC";
+		$sql = "SELECT * FROM tkomentar,tuser WHERE artikel_id = ? AND tkomentar.nama= tuser.nama ORDER BY date DESC";
 		$stmt = $this->pdo->prepare($sql);
-		$stmt->execute([$post]);
+		$stmt->execute([$artikel_id]);
 		return $stmt;
 	}
 

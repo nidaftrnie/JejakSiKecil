@@ -8,18 +8,18 @@ $pass = $_POST['password'];
 
 $data = $usr->login($email);
 
-$cekpass = password_verify($pass, $data['pass_user']);
+$cekpass = password_verify($pass, $data['pass']);
 
 if ($cekpass) {
     session_start();
     $_SESSION['login'] = 1;
-    $_SESSION['id'] = $data['id_user'];
-    $_SESSION['pass'] = $data['pass_user'];
-    $_SESSION['nama'] = $data['nama_user'];
+    $_SESSION['id'] = $data['id'];
+    $_SESSION['pass'] = $data['pass'];
+    $_SESSION['nama'] = $data['nama'];
     $_SESSION['role'] = $data['role'];
-    $_SESSION['email'] = $data['email_user'];
-    $_SESSION['foto'] = $data['foto_user'];
-    $_SESSION['telp'] = $data['telp_user'];
+    $_SESSION['email'] = $data['email'];
+    $_SESSION['foto'] = $data['foto'];
+    $_SESSION['telp'] = $data['telp'];
     $_SESSION['tgl_lahir'] = $data['tgl_lahir'];
     $_SESSION['jk'] = $data['jk'];
 
@@ -31,7 +31,7 @@ if ($cekpass) {
 } else {
     echo "<script>
                 alert('Login Gagal, Password tidak sesuai !');
-                window.location = '../index.php';
+                window.location = '../pages/login.php';
             </script>";
 }
 

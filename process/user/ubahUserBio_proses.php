@@ -19,7 +19,7 @@ $_SESSION['jk'] = $jk;
 
 echo "<script>
               alert('Data berhasil diubah !');
-              window.location = '../../index.php?p=edit_profil';
+              window.location = '../../index.php?p=edit';
           </script>";
 
 ?>

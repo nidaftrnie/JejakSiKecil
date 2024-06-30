@@ -5,8 +5,8 @@ $usr = new Komentar;
 
 $nama = $_GET['nama'];
 $komentar = $_GET['komentar'];
-$post = $_GET['post'];
+$artikel_id = $_GET['post'];
 
-$usr->tambahKomentar($nama, $komentar, $post);
+$usr->tambahKomentar($nama, $komentar, $artikel_id);
 
 ?>

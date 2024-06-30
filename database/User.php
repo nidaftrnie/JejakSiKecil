@@ -24,7 +24,7 @@ class User
 
 	public function checkEmail($email)
 	{
-		$sql = "SELECT * FROM tuser WHERE  email_user=?";
+		$sql = "SELECT * FROM tuser WHERE  email=?";
 		$stmt = $this->pdo->prepare($sql);
 		$stmt->execute([$email]);
 		$count = $stmt->rowCount();
@@ -37,7 +37,7 @@ class User
 
 	public function tambahUser($nama, $email, $telp, $pass, $foto)
 	{
-		$sql = "INSERT INTO tuser (nama_user,email_user,telp_user,pass_user,role,foto_user) VALUES(?,?,?,?,?,?)";
+		$sql = "INSERT INTO tuser (nama,email,telp,pass,role,foto) VALUES(?,?,?,?,?,?)";
 		$stmt = $this->pdo->prepare($sql);
 		$stmt->execute([
 			$nama,
@@ -57,7 +57,7 @@ class User
 	}
 	public function login($email)
 	{
-		$sql = "SELECT * FROM tuser WHERE email_user=?";
+		$sql = "SELECT * FROM tuser WHERE email=?";
 		$stmt = $this->pdo->prepare($sql);
 		$stmt->execute([$email]);
 		$data = $stmt->fetch();
@@ -66,7 +66,7 @@ class User
 
 	public function tampilUserById($id)
 	{
-		$sql = "SELECT * FROM tuser WHERE id_user=?";
+		$sql = "SELECT * FROM tuser WHERE id=?";
 		$stmt = $this->pdo->prepare($sql);
 		$stmt->execute([$id]);
 		$data = $stmt->fetch();
@@ -75,18 +75,18 @@ class User
 
 	public function hapusUser($id)
 	{
-		$sql = "DELETE FROM tuser WHERE id_user=?";
+		$sql = "DELETE FROM tuser WHERE id=?";
 		$stmt = $this->pdo->prepare($sql);
 		$stmt->execute([$id]);
 	}
 
 	public function updateUser($id, $nama, $telp, $pass, $foto)
 	{
-		$sql = "UPDATE tuser SET nama_user=?,
-						telp_user=?,
-											pass_user=?,
-											foto_user=?
-											WHERE id_user=?";
+		$sql = "UPDATE tuser SET nama=?,
+						telp=?,
+											pass=?,
+											foto=?
+											WHERE id=?";
 		$stmt = $this->pdo->prepare($sql);
 		$stmt->execute([
 			$nama,
@@ -100,11 +100,11 @@ class User
 
 	public function updateUserBio($id, $nama, $tgl_lahir, $telp, $jk)
 	{
-		$sql = "UPDATE tuser SET nama_user=?,
+		$sql = "UPDATE tuser SET nama=?,
 						tgl_lahir=?,
-											telp_user=?,
+											telp=?,
 											jk=?
-											WHERE id_user=?";
+											WHERE id=?";
 		$stmt = $this->pdo->prepare($sql);
 		$stmt->execute([
 			$nama,
@@ -118,8 +118,8 @@ class User
 
 	public function updateUserPass($id, $pass)
 	{
-		$sql = "UPDATE tuser SET pass_user=?
-						WHERE id_user=?";
+		$sql = "UPDATE tuser SET pass=?
+						WHERE id=?";
 		$stmt = $this->pdo->prepare($sql);
 		$stmt->execute([
 			$pass,

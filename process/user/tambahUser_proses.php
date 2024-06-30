@@ -51,12 +51,12 @@ if ($usr->checkEmail($email) == 1) {         //check email
 
       echo "<script>
         						alert('Berhasil Registrasi!');
-        						window.location = '../login.php';
+        						window.location = '../../pages/login.php';
         				</script>";
     } else {
       echo "<script>
         						alert('Ekstensi file tidak diizinkan!');
-        						window.location = '../../register.php';
+        						window.location = '../../pages/register.php';
         				</script>";
     }
 

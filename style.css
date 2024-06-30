@@ -1,0 +1,89 @@
+
+
+    .navigation {
+      border-bottom-right-radius: 200px;
+      border-bottom-left-radius: 200px;
+    }
+    .nav-link,
+    #home h1,
+    #home p,
+    #home h1,
+    .nav-item {
+      color: #ffffff;
+    }
+
+    #home button {
+      color: #00699a;
+    }
+
+    .nav-item .nav-link,
+    #home button,
+    #home p,
+    .nav-item,
+    a {
+      font-family: "Poppins";
+      font-size: 16px;
+    }
+
+    h2,
+    p {
+      font-family: "Poppins";
+    }
+
+    #logo,
+    #home h1,
+    .brand {
+      font-family: "Fjalla One", sans-serif;
+    }
+
+    .img {
+      color: white;
+    }
+
+    button {
+      outline: none;
+      border: none;
+    }
+
+    #home h1 {
+      margin-top: 180px;
+      font-size: 96px;
+    }
+
+    #home p {
+      font-size: 20px;
+      margin-bottom: 40px;
+    }
+
+    #home button {
+      margin-bottom: 180px;
+    }
+
+    #about p {
+      text-align: justify;
+    }
+
+    #nav_footer a {
+      color: #000000;
+    }
+
+        .accordion-item:not(.collapsed) .accordion-button {
+      background-color: #fff;
+      /* Set background color to white */
+      color: #000;
+      /* Set text color to black */
+    }
+
+    .accordion-item .accordion-button:focus {
+      border-color: none;
+    }
+
+    .accordion-item .accordion-collapse {
+      background-color: #fff;
+      /* Set background color to white */
+    }
+
+    .accordion-item .accordion-collapse .accordion-body {
+      color: #000;
+      /* Set text color to black */
+    }

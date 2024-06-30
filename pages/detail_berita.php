@@ -56,16 +56,16 @@
 						foreach ($recent as $row):
 							?>
 
-								<tr>
-									<td>
-										<img src="<?= $row['foto'] ?>">
+							<tr>
+								<td>
+									<img src="<?= $row['foto'] ?>">
 
-										<a href="index.php?p=detail_berita&id=<?= $row['id'] ?>">
-											<h1><?= $row['judul'] ?></h1>
-											<p><?= $row['artikel'] ?></p>
-										</a>
-									</td>
-								</tr>
+									<a href="index.php?p=detail_berita&id=<?= $row['id'] ?>">
+										<h1><?= $row['judul'] ?></h1>
+										<p><?= $row['artikel'] ?></p>
+									</a>
+								</td>
+							</tr>
 						<?php endforeach; ?>
 
 					</table>
@@ -82,32 +82,32 @@
 					$nama = $_SESSION['nama'];
 					$role = $_SESSION['role'];
 					?>
-						<!-- <form action="process/komentar/tambahKomentar_proses.php" method="post" enctype="multipart/form-data"> -->
-						<div class="komen-lawan">
-							<img src="<?= $_SESSION['foto'] ?>">
-							<div class="form-group">
-								<input type="hidden" name="nama" value="<?php echo $nama; ?>" id="nama">
-								<textarea class="form-control" name="komentar" maxlength="120" id="text" required></textarea>
-								<input type="hidden" name="post" value="<?php echo $data['id']; ?>" id="post">
-								<span class="badge badge-secondary" id="count_message"></span>
-								<button type="button" class="btn btn-secondary tombolpost" id="sendkomentar">Post</button>
-							</div>
+					<!-- <form action="process/komentar/tambahKomentar_proses.php" method="post" enctype="multipart/form-data"> -->
+					<div class="komen-lawan">
+						<img src="<?= $_SESSION['foto'] ?>">
+						<div class="form-group">
+							<input type="hidden" name="nama" value="<?php echo $nama; ?>" id="nama">
+							<textarea class="form-control" name="komentar" maxlength="120" id="text" required></textarea>
+							<input type="hidden" name="artikel_id" value="<?php echo $data['id']; ?>" id="post">
+							<span class="badge badge-secondary" id="count_message"></span>
+							<button type="button" class="btn btn-secondary tombolpost" id="sendkomentar">Post</button>
 						</div>
-						<!-- </form> -->
+					</div>
+					<!-- </form> -->
 
-						<?php
+					<?php
 
 				} else {
 					?>
-						<h3 class="text-hijau">Silahkan login untuk berkomentar</h3>
-						<?php
+					<h3 class="text-hijau">Silahkan login untuk berkomentar</h3>
+					<?php
 				}
 				?>
 				<div id="kolomKomentar">
 
 
 					<?php
-					$post = $_GET['id'];
+					$artikel_id = $_GET['id'];
 					$komentar = new Komentar;
 
 					$data2 = $komentar->tampilKomentarByPost($post);
@@ -115,12 +115,12 @@
 						?>
 
 
-							<div class="komen-lawan2">
-								<img src="<?= $row2['foto_user'] ?>">
-								<h1 class="text-hijau"><?= $row2['nama'] ?></h1>
-								<p><?= $row2['komentar'] ?></p>
-							</div>
-							<?php
+						<div class="komen-lawan2">
+							<img src="<?= $row2['foto'] ?>">
+							<h1 class="text-hijau"><?= $row2['nama'] ?></h1>
+							<p><?= $row2['komentar'] ?></p>
+						</div>
+						<?php
 					endforeach;
 					?>
 

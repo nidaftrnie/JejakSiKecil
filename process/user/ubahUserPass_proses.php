@@ -19,15 +19,15 @@ if ($passbaru1 == $passbaru2) {
     $_SESSION['pass'] = $passbaruenk;
 
     echo "<script>
-                  alert('Data berhasil diubah !');
-                  window.location = '../../index.php?p=edit_profil';
+                  alert('Password berhasil diubah !');
+                  window.location = '../../index.php?p=edit';
               </script>";
 
 
   } else {
     echo "<script>
                   alert('Password lama salah !');
-                  window.location = '../../index.php?p=edit_profil';
+                  window.location = '../../index.php?p=edit';
               </script>";
   }
 
@@ -36,7 +36,7 @@ if ($passbaru1 == $passbaru2) {
 } else {
   echo "<script>
                 alert('Password baru tidak cocok !');
-                window.location = '../../index.php?p=edit_profil';
+                window.location = '../../index.php?p=edit';
             </script>";
 
 }

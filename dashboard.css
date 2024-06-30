@@ -1,3 +1,9 @@
+
+.square-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 .edit_profile {
   box-shadow: 0 3px 20px rgba(0,0,0,0.16);
   border-radius:10px; 
@@ -193,7 +199,6 @@
 }
 
 
-
 .komen-lawan2 img{
   width: 60px;
   height: 60px;
@@ -260,16 +265,13 @@
   font-weight: bold;
 }
 
-
 .titleberita {
   margin-top: 20px;
   margin-left: 0px;
-  border-left: 3px solid #13BFB1;
+  border-left: 3px solid #00034F;
 }
-.titleberita h1 {
-  text-transform: uppercase;
-  font-size: 24px;
-  color: #13BFB1;
+.titleberita h2 { 
+  color: #00034F;
 }
 
 .maelee {
@@ -298,8 +300,8 @@
   height: 46px;
   overflow: hidden;
 }
-@media (min-width: 992px) {
 
+@media (min-width: 992px) {
   .workingspace {
     text-align: left; 
   }
@@ -368,9 +370,6 @@
   font-size: 28px;
   color: #636363;
 }
-
-
-
 
 .feather {
   width: 16px;

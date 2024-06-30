@@ -9,8 +9,7 @@ $data = $user->tampilArtikelById($id);
 
 <br />
 <!-- tempat ketik berita -->
-<form action="process/artikel/editArtikel_proses.php" method="post" enctype="multipart/form-data"
-    style="margin-left: 40%">
+<form action="process/artikel/editArtikel_proses.php" method="post" enctype="multipart/form-data">
     <div class="form-group">
         <label for="judulartikel">Judul Artikel :</label>
         <input type="text" name="judul" value="<?= $data['judul'] ?>" placeholder="Judul Artikel" class="form-control"
@@ -30,12 +29,8 @@ $data = $user->tampilArtikelById($id);
     <button class="btn btn-outline-primary mb-2 mt-3" data-toggle="modal" data-target="#tambah_dokter"
         data-whatever="@getbootstrap">Ubah Artikel</button>
 </form>
-<!-- akhir tempat berita -->
+<!-- akhir tempat artikel -->
 
-
-<!-- Berita -->
-
-<!-- Akhir berita -->
 
 <!-- awal pagination -->
 <div class="row justify-content-md-center mt-5">
