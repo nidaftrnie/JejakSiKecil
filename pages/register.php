@@ -33,9 +33,10 @@
                     </div>
                     <div class="col-md-6">
                         <div class="card-body">
-                            <div class="brand-wrapper">
+                            <a href=".."
+                                style="color: black; font-weight: bold; font-family: 'Fjalla One', sans-serif;">
                                 <p alt="logo" class="logo">JejakSiKecil</p>
-                            </div>
+                            </a>
                             <p class="login-card-description">Register your account</p>
                             <form method="post" action="../process/user/tambahUser_proses.php"
                                 enctype="multipart/form-data">

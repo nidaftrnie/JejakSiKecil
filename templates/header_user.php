@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>JejakSiKecil</title>
 
   <!--Style CSS-->
@@ -24,9 +24,9 @@
   <!-- AOS CSS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
+  <link href="open-iconic-master/font/css/open-iconic-bootstrap.css" rel="stylesheet">
+
   <style>
-
-
     #home .bg-image {
       background-image: url("img/kids.svg");
       background-size: cover;
@@ -37,7 +37,8 @@
     #home h1,
     #home p,
     #home h1,
-    .nav-item {
+    .nav-item,
+    .offcanvas-title {
       color: #ffffff;
     }
   </style>
@@ -49,55 +50,61 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-md fixed-top" style="background-color: #458fb1">
     <div class="container">
-      <div class="navbar-brand" href="#home" id="logo" style="color: #ffffff; font-size: 20px">JejakSiKecil</div>
-      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-        aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
-            JejakSiKecil
-          </h5>
-          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-          <ul class="navbar-nav justify-content-center flex-grow-1">
-            <li class="nav-item">
-              <a class="nav-link" href="./index.php">Beranda</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link mx-lg-2" href="#">Artikel</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link mx-lg-2" href="#about">Tentang</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link mx-lg-2" href="#faq">FAQ</a>
-            </li>
-          </ul>
+      <a class="navbar-brand" href="../JejakSiKecil" id="logo" style="color: #ffffff; font-size: 20px">JejakSiKecil</a>
+      <?php if (!isset($_GET['p']) || ($_GET['p'] !== 'detail_artikel')): ?>
+        <?php if (!isset($_GET['p']) || ($_GET['p'] !== 'perkembangansikecil')): ?>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end light" tabindex="-1" id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel" style="background-color: #458fb1">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+                JejakSiKecil
+              </h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"
+                style="background-color: white"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-center flex-grow-1">
+                <li class="nav-item">
+                  <a class="nav-link" href="./index.php">Beranda</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Artikel</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#about">Tentang</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#faq">FAQ</a>
+                </li>
+              </ul>
 
-          <?php
-          if (isset($_SESSION['login'])):
-            ?>
+              <?php
+              if (isset($_SESSION['login'])):
+                ?>
 
-            <!-- Pages if login as user -->
-            <?php
-            if (($_SESSION['login']) && ($_SESSION['role'] == 'user')):
-              ?>
-              <a class="nav-item nav-link pe-2 px-auto my-auto" href="index.php?p=edit">Account</a>
-              <a class="btn rounded-pill fw-semibold" href="process/logout.php"
-                style="background-color: #00699a; font-size: 16px; color: #ffff;"><img src="./icons/login.svg"
-                  id="icon-login" class="me-1" />Logout</a>
+                <!-- Pages if login as user -->
+                <?php
+                if (($_SESSION['login']) && ($_SESSION['role'] == 'user')):
+                  ?>
+                  <a class="nav-item nav-link pe-2 px-auto my-auto" href="index.php?p=edit">Account</a>
+                  <a class="btn rounded-pill fw-semibold" href="process/logout.php"
+                    style="background-color: #00699a; font-size: 16px; color: #ffff;"><img src="./icons/login.svg"
+                      id="icon-login" class="me-1" />Logout</a>
+                <?php endif; ?>
+
+                <!-- Pages if not login -->
+              <?php else: ?>
+                <a class="btn rounded-pill fw-semibold" href="pages/login.php"
+                  style="background-color: #00699a; font-size: 16px; color: #ffff;">
+                  <img src="./icons/login.svg" id="icon-login" />
+                  Login
+                </a>
+              <?php endif; ?>
             <?php endif; ?>
-
-            <!-- Pages if not login -->
-          <?php else: ?>
-            <a class="btn rounded-pill fw-semibold" href="pages/login.php"
-              style="background-color: #00699a; font-size: 16px; color: #ffff;">
-              <img src="./icons/login.svg" id="icon-login" />
-              Login
-            </a>
           <?php endif; ?>
         </div>
       </div>

@@ -9,8 +9,8 @@ $fotolama = $_POST['fotolama'];
 
 $sumber = $_FILES['foto']['tmp_name'];
 $namafile = $_FILES['foto']['name'];
-$tujuan = "../../photos/" . $namafile;  //untuk di upload
-$alamat = "photos/" . $namafile;  //untuk di simpan
+$tujuan = "../../uploads/" . $namafile;  //untuk di upload
+$alamat = "uploads/" . $namafile;  //untuk di simpan
 
 
 $filesize = $_FILES['foto']['size']; //ambil size gambar

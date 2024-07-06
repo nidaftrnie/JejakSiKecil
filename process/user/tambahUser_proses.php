@@ -5,7 +5,6 @@ $usr = new User;
 
 $nama = $_POST['nama'];
 $email = $_POST['email'];
-$telp = $_POST['telepon'];
 $pass = $_POST['password'];
 
 $passenkripsi = password_hash($pass, PASSWORD_BCRYPT);

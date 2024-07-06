@@ -44,7 +44,7 @@
 
             <!-- tabel  -->
             <table class="table table_privacy">
-                <thead class="thead barThead">
+                <thead class="thead barThead" style="color: black">
                     <tr>
                         <th colspan="3">Privacy</th>
 
@@ -71,13 +71,13 @@
         </div>
     </div>
 
-    <!-- Edit Bio -->
+    <!-- Edit Profil -->
     <div class="modal fade" id="edit_bio" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Edit Bio</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Edit Profil</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -93,8 +93,9 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Tanggal Lahir:</label>
-                            <input type="date" class="form-control" id="recipient-name" name="tgl_lahir" required>
+                        <label for="recipient-name" class="col-form-label">Tanggal Lahir:</label>
+                        <input type="date" class="form-control" id="recipient-name" name="tgl_lahir"
+                            value="<?php echo ($_SESSION['tgl_lahir'] != '') ? $_SESSION['tgl_lahir'] : ''; ?>" required>
                         </div>
 
                         <div class="form-group">
@@ -107,14 +108,16 @@
                             <label for="recipient-name" class="col-form-label">Jenis Kelamin:</label><br />
                             <div class="form-check-inline">
                                 <input class="form-check-input" type="radio" name="jk" id="exampleRadios1"
-                                    value="Laki-Laki" checked>
+                                    value="Laki-Laki" <?php if ($_SESSION['jk'] == 'Laki-Laki')
+                                        echo 'checked'; ?>>
                                 <label class="form-check-label" for="exampleRadios1">
                                     Laki - Laki
                                 </label>
                             </div>
                             <div class="form-check-inline">
                                 <input class="form-check-input" type="radio" name="jk" id="exampleRadios2"
-                                    value="Perempuan">
+                                    value="Perempuan" <?php if ($_SESSION['jk'] == 'Perempuan')
+                                        echo 'checked'; ?>>
                                 <label class="form-check-label" for="exampleRadios2">
                                     Perempuan
                                 </label>

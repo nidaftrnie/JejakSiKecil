@@ -33,10 +33,11 @@
                     </div>
                     <div class="col-md-6">
                         <div class="card-body">
-                            <div class="brand-wrapper">
+                            <a href=".."
+                                style="color: black; font-weight: bold; font-family: 'Fjalla One', sans-serif;">
                                 <p alt="logo" class="logo">JejakSiKecil</p>
-                            </div>
-                            <p class="login-card-description">Sign into your account</p>
+                            </a>
+                            <p class="login-card-description">Login to your account</p>
                             <form action="../process/login_process.php" method="post">
                                 <!-- Form action pointing to login_proses.php with POST method -->
                                 <div class="form-group">

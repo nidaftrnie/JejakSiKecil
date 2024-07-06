@@ -16,7 +16,6 @@ $datauser = $usr->tampilUser();
     <tr>
       <th>No</th>
       <th>Nama User</th>
-      <th>Umur</th>
       <th>Jenis Kelamin</th>
       <th>Aksi</th>
     </tr>
@@ -32,7 +31,6 @@ $datauser = $usr->tampilUser();
       <tr>
         <td><?= $i ?></td>
         <td><?= $row['nama'] ?></td>
-        <td>19</td>
         <td>
           <?php
           if ($row['jk'] == "") {

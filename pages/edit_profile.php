@@ -6,7 +6,8 @@
 			</div>
 
 			<div class="col-lg-6">
-				<span class="badge badge-secondary label_profile" style="background-color: #00699A"><?= $_SESSION['role'] ?></span>
+				<span class="badge badge-secondary label_profile"
+					style="background-color: #00699A"><?= $_SESSION['role'] ?></span>
 				<h1 class="nama_profile"><?= $_SESSION['nama'] ?></h1>
 				<img src="img/birthday-cake.svg" class="icon_kue">
 				<p class="p_class">
@@ -38,8 +39,8 @@
 				</p><br />
 
 
-				<a href="#" class="btn btn-outline-dark tombol_edit_profile mb-5" data-toggle="modal" data-target="#edit_bio"
-					data-whatever="@getbootstrap">Edit Profil</a>
+				<a href="#" class="btn btn-outline-dark tombol_edit_profile mb-5" data-toggle="modal"
+					data-target="#edit_bio" data-whatever="@getbootstrap">Edit Profil</a>
 			</div>
 
 			<!-- tabel  -->
@@ -94,7 +95,9 @@
 
 						<div class="form-group">
 							<label for="recipient-name" class="col-form-label">Tanggal Lahir:</label>
-							<input type="date" class="form-control" id="recipient-name" name="tgl_lahir" required>
+							<input type="date" class="form-control" id="recipient-name" name="tgl_lahir"
+								value="<?php echo ($_SESSION['tgl_lahir'] != '') ? $_SESSION['tgl_lahir'] : ''; ?>"
+								required>
 						</div>
 
 						<div class="form-group">
@@ -107,14 +110,16 @@
 							<label for="recipient-name" class="col-form-label">Jenis Kelamin:</label><br />
 							<div class="form-check-inline">
 								<input class="form-check-input" type="radio" name="jk" id="exampleRadios1"
-									value="Laki-Laki" checked>
+									value="Laki-Laki" <?php if ($_SESSION['jk'] == 'Laki-Laki')
+										echo 'checked'; ?>>
 								<label class="form-check-label" for="exampleRadios1">
 									Laki - Laki
 								</label>
 							</div>
 							<div class="form-check-inline">
 								<input class="form-check-input" type="radio" name="jk" id="exampleRadios2"
-									value="Perempuan">
+									value="Perempuan" <?php if ($_SESSION['jk'] == 'Perempuan')
+										echo 'checked'; ?>>
 								<label class="form-check-label" for="exampleRadios2">
 									Perempuan
 								</label>
@@ -174,3 +179,4 @@
 		</div>
 	</div>
 	<!-- Akhir edit password -->
+</div>

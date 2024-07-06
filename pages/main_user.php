@@ -7,9 +7,9 @@
                     <div>
                         <h1>JejakSiKecil</h1>
                         <p>Membimbing Langkah Kecil Menuju Masa Depan Besar</p>
-                        <a href="pages/perkembangansikecil.php">
+                        <a href="index.php?p=perkembangansikecil">
                             <button type="button" class="btn rounded-pill"
-                                style="background-color: #bef7ff; width: 20%; height: 6%;" zz>Perkembangan
+                                style="background-color: #bef7ff; width: fit-content; height: 6%;" zz>Perkembangan
                                 SiKecil</button>
                         </a>
                     </div>
@@ -23,11 +23,11 @@
 <section id="about" class="mt-5 pt-5 pb-4">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 my-auto d-flex justify-content-end pe-5" data-aos="fade-right">
+            <div class="col-md-5 my-auto d-flex justify-content-end pe-5" data-aos="fade-right">
                 <img src="./img/kid-about.svg" class="img-fluid">
             </div>
-            <div class="col-md-6 my-auto pe-5" data-aos="fade-left">
-                <h2 class="fw-bold" style="color:#00034F">Tentang</h2>
+            <div class="col-md-7 my-auto pe-5" data-aos="fade-left">
+                <h2 class="fw-bold" style="color:#153448">Tentang</h2>
                 <p>JejakSiKecil merupakan website yang menyediakan informasi mengenai pertumbuhan dan perkembangan
                     anak, serta memberikan kesempatan untuk berbagi informasi mengenai tumbuh kembang anak dengan
                     menulis artikel.</p>
@@ -40,8 +40,8 @@
 <section id="artikel" class="mt-5 pt-5 pb-4">
     <div class="container">
         <div class="row titleberita" data-aos="fade-up">
-            <div class="col-12">
-                <h2 class="fw-bold">Artikel Terbaru</h2>
+            <div class="col-md-12">
+                <h2 class="fw-bold" style="color:#153448">Artikel Terbaru</h2>
                 <hr>
             </div>
         </div>
@@ -55,12 +55,12 @@
                 foreach ($data as $row):
                     ?>
                     <div class="row mb-5 border rounded pt-5 pb-5" id="berita">
-                        <div class="col-lg-6">
+                        <div class="col-md-6">
                             <img src="<?= $row['foto'] ?>" alt="workingspace" class="img-fluid" style="padding-left: 50%">
                         </div>
-                        <div class="col-lg-6">
-                            <h3><?= $row['judul'] ?></h3>
-                            <p><?= $row['artikel'] ?></p>
+                        <div class="col-md-6">
+                            <h3 style="color:#153448"><?= $row['judul'] ?></h3>
+                            <p><?= substr($row['artikel'], 0, 100) ?>...</p>
                             <small class="text-primary">
                                 <?php
                                 $harijam = $row['date'];
@@ -68,8 +68,8 @@
                                 echo date('F, d Y', $date);
                                 ?>
                             </small><br>
-                            <a href="index.php?p=detail_berita&id=<?= $row['id'] ?>"
-                                class="btn btn-primary tombol mt-4">Read More</a>
+                            <a href="index.php?p=detail_artikel&id=<?= $row['id'] ?>" class="btn mt-4"
+                                style="background-color:#00699A;color:white">Read More</a>
                         </div>
                     </div>
                     <?php
@@ -92,19 +92,21 @@
                     <div class="card mb-5 justify-content-center w-100">
                         <div class="row no-gutters">
                             <div class="col-md-6">
-                                <img src="<?= $row['foto'] ?>" alt="workingspace" class="square-img">
+                                <img src="<?= $row['foto'] ?>" alt="workingspace" class="square-img img-fluid">
                             </div>
-                            <div class="col-6 ps-3 pe-3">
-                                <h4 class="pt-2"><?= $row['judul'] ?></h4>
-                                <small class="text-primary">
-                                    <?php
-                                    $harijam = $row['date'];
-                                    $date = strtotime($harijam);
-                                    echo date('F, d Y', $date);
-                                    ?>
-                                </small>
-                                <a href="index.php?p=detail_berita&id=<?= $row['id'] ?>"><img src="icons/next.svg"
-                                        alt="workingspace" style="width:30px; height: 30px;"></a>
+                            <div class="col-md-6 ps-3 pe-3">
+                                <h4 class="pt-2" style="color:#153448"><?= $row['judul'] ?></h4>
+                                <div class="readmore">
+                                    <small class="text-primary">
+                                        <?php
+                                        $harijam = $row['date'];
+                                        $date = strtotime($harijam);
+                                        echo date('F, d Y', $date);
+                                        ?>
+                                    </small>
+                                    <a href="index.php?p=detail_artikel&id=<?= $row['id'] ?>"><img src="icons/next.svg"
+                                            alt="workingspace" style="width:30px; height: 30px;"></a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -121,7 +123,7 @@
 <section id="faq" class=" pt-5 pb-4">
     <div class="container">
         <div data-aos="zoom-in-right">
-            <h2 class="fw-bold" style="color:#00034F">Frequently Asked Questions</h2>
+            <h2 class="fw-bold" style="color:#153448">Frequently Asked Questions</h2>
         </div>
         <div class="accordion mt-5" id="accordionExample" data-aos="zoom-in-left">
             <div class="accordion-item">
@@ -169,6 +171,21 @@
                         <strong>Informasi yang disediakan</strong> berasal dari sumber yang terpercaya dan
                         ditinjau oleh ahli dalam bidang pertumbuhan dan perkembangan anak. Kami berusaha
                         memberikan informasi yang akurat dan bermanfaat.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                    <button class="accordion-button" type="button" data-bs-target="#collapseFour" aria-expanded="true"
+                        aria-controls="collapseFour">
+                        Bagaimana cara menambahkan komentar pada artikel?
+                    </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        Untuk dapat <strong>menambahkan komentar,</strong> Anda harus login terlebih dahulu. Lalu,
+                        klik untuk membaca artikel lebih lanjut dan Anda dapat menambahkan komentar.
                     </div>
                 </div>
             </div>

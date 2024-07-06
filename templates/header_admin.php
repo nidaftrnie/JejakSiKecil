@@ -43,7 +43,7 @@
 
                         <li class="nav-item">
                             <a class="nav-link" href="index.php?p=lihat_artikel">
-                                <p><img class="" src="img/cd-icon-username.svg"> Lihat Artikel</p>
+                                <p><img class="" src="img/cd-icon-username.svg"> Kelola Artikel</p>
                             </a>
                         </li>
 

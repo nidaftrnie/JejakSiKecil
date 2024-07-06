@@ -1,5 +1,5 @@
 <!--Footer Section-->
-<section id="footer" class="mt-5 pt-4 pb-3" style="background-color: #00699A;">
+<section classs="footer" id="footer" class="mt-5 pt-4 pb-3" style="background-color: #00699A; position: fixed bottom: 0;">
   <div class="container text-center">
     <div>
       <div class="fw-medium" id="nav_footer">
